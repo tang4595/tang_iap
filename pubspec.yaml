@@ -14,8 +14,6 @@ dependencies:
   in_app_purchase: ^3.1.13
 
   # Base
-  ss_config:
-    path: ../ss_config
   tang_appbase:
     git: https://github.com/tang4595/tang_appbase.git
   tang_util:
