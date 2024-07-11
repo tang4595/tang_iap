@@ -1,5 +1,5 @@
+import 'dart:convert';
 import 'package:in_app_purchase/in_app_purchase.dart';
-
 import 'iap_model.dart';
 
 extension PurchaseUtil on PurchaseDetails {
@@ -39,4 +39,10 @@ extension PurchaseNecessaryInfoUtil on IAPPurchaseNecessaryInfoModel {
     details.pendingCompletePurchase = pendingCompletePurchase ?? false;
     return details;
   }
+}
+
+extension IapUtilStringExt on String {
+
+  dynamic toJson() => jsonDecode(this);
+  Map<String, dynamic>? toJsonMap() => jsonDecode(this) as Map<String, dynamic>;
 }

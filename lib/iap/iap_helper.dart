@@ -8,7 +8,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tang_iap/config/tang_iap_config.dart';
 import 'package:tang_iap/iap/iap_model.dart';
 import 'package:tang_iap/iap/iap_util.dart';
-import 'package:tang_util/util/util.dart';
 
 /// * 大致流程 *
 /// 1、初始化、加载Products identifier List

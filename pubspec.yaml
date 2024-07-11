@@ -13,12 +13,6 @@ dependencies:
   shared_preferences: ^2.2.2
   in_app_purchase: ^3.1.13
 
-  # Base
-  tang_appbase:
-    git: https://github.com/tang4595/tang_appbase.git
-  tang_util:
-    git: https://github.com/tang4595/tang_util.git
-
 dev_dependencies:
   flutter_test:
     sdk: flutter
