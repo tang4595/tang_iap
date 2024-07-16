@@ -1,0 +1,35 @@
+# .github/workflows/publish.yml
+name: Publish to pub.dev
+
+on:
+  push:
+    tags:
+    - 'v[0-9]+.[0-9]+.[0-9]+*' # tag pattern on pub.dev: 'v{{version}'
+
+# Publish using custom workflow
+jobs:
+  publish:
+    permissions:
+      id-token: write # Required for authentication using OIDC
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: dart-lang/setup-dart@v1
+      
+      - name: Set up Flutter Env
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: 3.19.4
+          
+      - name: The Flutter Env
+        run: flutter --version
+        
+      - name: Install dependencies
+        run: flutter pub get
+        
+      # Here you can insert custom steps you need
+      # - run: flutter tool/generate-code.dart
+      
+      - name: Publish
+        run: flutter pub publish --force
